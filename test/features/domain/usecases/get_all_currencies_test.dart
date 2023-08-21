@@ -1,6 +1,5 @@
 
 import 'package:currency_converter/features/currency_converter/domain/entities/currencies.dart';
-import 'package:currency_converter/features/currency_converter/domain/entities/currency.dart';
 import 'package:currency_converter/features/currency_converter/domain/repositories/currency_repository.dart';
 import 'package:currency_converter/features/currency_converter/domain/usecases/get_all_currencies.dart';
 import 'package:dartz/dartz.dart';
@@ -14,10 +13,8 @@ void main() {
   final MockCurrencyRepository mockCurrencyRepository =
       MockCurrencyRepository();
   final GetAllCurrencies usecase = GetAllCurrencies(mockCurrencyRepository);
-  const Currencies testCurrencyList = Currencies(timestamp: 1, currencies: [
-    Currency(code: "EUR", rate: 1.5),
-    Currency(code: "USD", rate: 1),
-  ]);
+  const Currencies testCurrencyList = Currencies(timestamp: 1, currencies: {"EUR": 1.5, "USD": 1});
+    
   test("should return a list of currencies", () async {
     //arrange
     when(() => mockCurrencyRepository.getAllCurrencies())

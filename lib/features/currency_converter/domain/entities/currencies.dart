@@ -1,11 +1,11 @@
 
 import 'package:equatable/equatable.dart';
 
-import 'currency.dart';
+
 
 class Currencies extends Equatable{
   final int timestamp;
-  final List<Currency> currencies;
+  final Map<String,dynamic> currencies;
 
   const Currencies({required this.timestamp,required this.currencies});
   
