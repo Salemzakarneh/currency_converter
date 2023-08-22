@@ -5,7 +5,7 @@
     "timestamp":1692118263,
     "source":"USD",
     "quotes":{
-        "EUR": 1.5,
-         "USD": 1
+        "USDEUR": 1.5,
+         "USDUSD": 1
     }
   }

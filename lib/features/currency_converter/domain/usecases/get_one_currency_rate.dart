@@ -10,7 +10,7 @@ class GetOneCurrencyRate {
 
   GetOneCurrencyRate(this._currencyRepository);
  Future< Either<Failure, double>> call(
-      String baseCurrency, String targetCurrency) {
-    return _currencyRepository.getOneCurrencyRate(baseCurrency, targetCurrency);
+      {required String baseCurrency,required String targetCurrency}) {
+    return _currencyRepository.getOneCurrencyRate(baseCurrency:baseCurrency, targetCurrency:targetCurrency);
   }
 }

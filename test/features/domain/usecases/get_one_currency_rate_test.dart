@@ -19,14 +19,14 @@ void main() {
   test('should return a currency rate', () async {
     //arrange
     when(() => mockCurrencyRepository.getOneCurrencyRate(
-            baseCurrencyTest, targetCurrencyTest))
+           baseCurrency: baseCurrencyTest,targetCurrency: targetCurrencyTest))
         .thenAnswer((_) async => const Right(currencyRateTest));
     //act
-    final result = await usecase(baseCurrencyTest, targetCurrencyTest);
+    final result = await usecase(baseCurrency: baseCurrencyTest,targetCurrency: targetCurrencyTest);
     //assert
     expect(result, const Right(currencyRateTest));
     verify(() => mockCurrencyRepository.getOneCurrencyRate(
-        baseCurrencyTest, targetCurrencyTest));
+      baseCurrency: baseCurrencyTest,targetCurrency: targetCurrencyTest));
     verifyNoMoreInteractions(mockCurrencyRepository);
   });
 }
